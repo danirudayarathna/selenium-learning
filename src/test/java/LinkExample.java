@@ -4,8 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import javax.xml.xpath.XPath;
+import java.util.List;
 
 public class LinkExample {
 
@@ -20,7 +19,7 @@ public class LinkExample {
 
 
     @Test
-    public void LinkTests(){
+    public void linkTests(){
         //Take me to dashboard
         WebElement homelink = driver.findElement(By.linkText("Go To Dashboard"));
         homelink.click();
@@ -48,8 +47,14 @@ public class LinkExample {
 
 
         //Count page link
+        List<WebElement> countfullpageLinks =  driver.findElements(By.tagName("a"));
+        int pageLinkCount = countfullpageLinks.size();
+        System.out.println("Count of full oage links: " + pageLinkCount);
 
 
+        WebElement layoutElement = driver.findElement(By.className("layout-main-content"));
+        List<WebElement> countOfLayoutLinks = layoutElement.findElements(By.tagName("a"));
+        System.out.println("Count of layout links: " + countOfLayoutLinks.size());
 
     }
 

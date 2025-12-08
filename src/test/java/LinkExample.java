@@ -28,7 +28,7 @@ public class LinkExample {
         //Find My Destination
         WebElement wheretoGo = driver.findElement(By.partialLinkText("Find the URL"));
         String path = wheretoGo.getAttribute("href");
-        System.out.printf("This link is going to: "+ path);
+        System.out.println("This link is going to: "+ path);
 
         //Am I Broken Link?
         WebElement brokenLink = driver.findElement(By.linkText("Broken?"));

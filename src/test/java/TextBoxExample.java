@@ -11,7 +11,7 @@ public class TextBoxExample {
     public void openLinkTestPage(){
 
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage().window();
         driver.get("https://www.leafground.com/link.xhtml");
     }
 

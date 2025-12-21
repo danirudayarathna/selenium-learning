@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,11 +11,12 @@ public class TextBoxExample {
     WebDriver driver;
 
     @BeforeMethod
-    public void openLinkTestPage(){
+    public void openLinkTestPage() throws InterruptedException {
 
         driver = new ChromeDriver();
-        driver.manage().window();
-        driver.get("https://www.leafground.com/link.xhtml");
+        driver.manage().window().maximize();
+        driver.get("https://www.leafground.com/link.xhtml");// URL is wrong correct it.
+        Thread.sleep(3000);
     }
 
     @Test
@@ -41,6 +43,8 @@ public class TextBoxExample {
         String value = textElement.getAttribute("");
         System.out.println(value);
 
+        //Step 6
+        driver.findElement(By.id("")).sendKeys("" + Keys.TAB);
 
 
     }
